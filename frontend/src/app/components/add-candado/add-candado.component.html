@@ -1,0 +1,30 @@
+<form #candadoForm="ngForm" (ngSubmit)="addCandado(candadoForm)">
+
+    <input type="hidden" name="_id" [(ngModel)]="candadoService.selectedCandado._id">
+
+    <div class="form-group">
+        <label for="nombre">Nombre: </label>
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="candadoService.selectedCandado.nombre" [disabled]="isEditing">
+    </div>
+    <div class="form-group">
+        <label for="laptitud">Laptitud: </label>
+        <input type="number" class="form-control" name="laptitud" [(ngModel)]="candadoService.selectedCandado.laptitud" [disabled]="isEditing">
+    </div>
+    <div class="form-group">
+        <label for="Longitud">Longitud: </label>
+        <input type="number" class="form-control" name="longitud" [(ngModel)]="candadoService.selectedCandado.longitud" [disabled]="isEditing">
+    </div>
+    <div class="form-group">
+        <label for="ultimoRegistro">Ultimo Registro: </label>
+        <input type="text" class="form-control" name="ultimoRegistro" [(ngModel)]="candadoService.selectedCandado.ultimoRegistro" [disabled]="isEditingUltimoRegistro">
+    </div>
+    <div class="form-group">
+        <label for="estadoCerrojo">Estado de Cerrojo: </label>
+        <input class="form-control" name="estadoCerrojo" [(ngModel)]="candadoService.selectedCandado.estadoCerrojo" [disabled]="isEditingEstadoCerrojo">
+    </div>
+
+    <button class="btn btn-secondary mr-2" (click)="limpiarCampos(candadoForm)"> Limpiar</button>
+
+    <button class="btn btn-primary">Guardar</button>
+
+</form>

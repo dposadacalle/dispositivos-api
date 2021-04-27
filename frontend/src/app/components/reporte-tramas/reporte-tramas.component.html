@@ -1,0 +1,38 @@
+<div class="container">
+    <form #tramaForm="ngForm" (ngSubmit)="consultarTrama(tramaForm)">
+        <div class="card m-5">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Dispositivo: </label>
+                            <select class="form-control" [(ngModel)]="candadoService.selectedCandado.   nombre" name="terminalID">
+                            <option value="" disabled>Seleccione Dispositivo</option>
+                            <option *ngFor="let candado of candadoService.candados" 
+                                [ngValue]="candado.terminalID"> {{candado.nombre}}
+                            </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Fecha Inicio: </label>
+                            <input type="datetime-local" class="form-control" [(ngModel)]="tramaService.selectedTramas.fechaInicio" name="fechaInicio">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Fecha Inicio: </label>
+                            <input type="datetime-local" class="form-control" [(ngModel)]="tramaService.selectedTramas.fechaFin" name="fechaFin">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Enviar Reporte</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="container">
+        <div id="map"></div>
+    </div>
+</div>
